@@ -1,0 +1,9 @@
+[Unit]
+Description=Run example maintenance daily
+[Timer]
+OnCalendar=daily
+RandomizedDelaySec=15m
+Persistent=true
+Unit=maintenance.service
+[Install]
+WantedBy=timers.target
