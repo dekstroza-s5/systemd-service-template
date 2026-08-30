@@ -1,0 +1,10 @@
+[Unit]
+Description=Example maintenance task
+[Service]
+Type=oneshot
+User=example
+ExecStart=/opt/example/bin/maintenance
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
