@@ -1,0 +1,13 @@
+/var/log/example/*.log {
+  daily
+  rotate 14
+  compress
+  delaycompress
+  missingok
+  notifempty
+  create 0640 example adm
+  sharedscripts
+  postrotate
+    systemctl kill -s HUP example@production.service 2>/dev/null || true
+  endscript
+}
